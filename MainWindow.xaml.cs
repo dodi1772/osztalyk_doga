@@ -73,7 +73,7 @@ namespace osztalyk_doga
 			if (diakLista.SelectedItem!=null)
 			{
 				string[] sor = diakLista.SelectedItem.ToString().Split(" ");
-				osszpenz -= int.Parse(sor[2]);
+				osszpenz -= int.Parse(sor[3]);
 				osszBefizetett.Text = $"{osszpenz} Ft";
 				diakLista.Items.Remove(diakLista.SelectedItem);
 			}
