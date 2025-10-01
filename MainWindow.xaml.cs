@@ -31,10 +31,27 @@ namespace osztalyk_doga
 			}
             else
             {
-				int befizSzam= int.Parse(befizetettMennyiseg.Text);
-				diakLista.Items.Add($"{diakNev.Text} - {befizSzam} Ft");
-                osszpenz += befizSzam;
-				osszBefizetett.Text=$"{osszpenz} Ft";
+				string[] nevSzam= diakNev.Text.Split(" ");
+				if (nevSzam.Length>1)
+				{
+
+					int befizSzam = int.Parse(befizetettMennyiseg.Text);
+					if (befizSzam<0)
+					{
+						MessageBox.Show("Csak nemnegatív számot adj meg.");
+					}
+					else
+					{
+						diakLista.Items.Add($"{diakNev.Text} - {befizSzam} Ft");
+						osszpenz += befizSzam;
+						osszBefizetett.Text = $"{osszpenz} Ft";
+					}
+				}
+				else
+				{
+					MessageBox.Show("Kérlek a név mezőbe írj legalább egy kereszt és egy vezeték nevet.");
+				}
+
 			}
 		}
 
