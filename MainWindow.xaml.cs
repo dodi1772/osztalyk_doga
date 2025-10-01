@@ -50,5 +50,20 @@ namespace osztalyk_doga
 			diakNev.Text = "";
 			befizetettMennyiseg.Text = "";
 		}
+
+		private void kijButtClick(object sender, RoutedEventArgs e)
+		{
+			if (diakLista.SelectedItem!=null)
+			{
+				string[] sor = diakLista.SelectedItem.ToString().Split(" ");
+				osszpenz -= int.Parse(sor[2]);
+				osszBefizetett.Text = $"{osszpenz} Ft";
+				diakLista.Items.Remove(diakLista.SelectedItem);
+			}
+			else
+			{
+				MessageBox.Show("Kérlek jelölj ki egy elemet a listából.");
+			}
+		}
 	}
 }

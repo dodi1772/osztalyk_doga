@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:osztalyk_doga"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="400">
+        Title="MainWindow" Height="375" Width="430">
 	<Grid Grid.Row="0" Grid.Column="0">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="auto"/>
@@ -28,6 +28,7 @@
 				<TextBlock x:Name="osszBefizetett" Text="0 Ft" Margin="10,0,0,0"/>
 				<Button x:Name="ceButt" Content="CE" Click="ceClick" Margin="10,0,0,0" Padding="10,0,10,0"/>
 				<Button x:Name="cButt" Content="C" Click="cClick" Margin="15,0,0,0" Padding="10,0,10,0"/>
+				<Button x:Name="kijButt" Content="Kij. törlése" Click="kijButtClick" Margin="15,0,0,0" Padding="10,0,10,0"/>
 			</WrapPanel>
 
 		</StackPanel>
