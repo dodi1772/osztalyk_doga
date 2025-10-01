@@ -20,12 +20,35 @@ namespace osztalyk_doga
         public MainWindow()
         {
             InitializeComponent();
-        }
+			diakNev.Focus();
+		}
 
 		private void hozzClick(object sender, RoutedEventArgs e)
 		{
-            diakLista.Items.Add($"{diakNev.Text + " - " + befizetettMennyiseg + " Ft"}");
+			if (int.TryParse(befizetettMennyiseg.Text, out _)==false)
+			{
+                MessageBox.Show("Kérlek a befizetett mennyiség mezőbe számot írj csak.");
+			}
+            else
+            {
+				int befizSzam= int.Parse(befizetettMennyiseg.Text);
+				diakLista.Items.Add($"{diakNev.Text} - {befizSzam} Ft");
+                osszpenz += befizSzam;
+				osszBefizetett.Text=$"{osszpenz} Ft";
+			}
+		}
 
+		private void ceClick(object sender, RoutedEventArgs e)
+		{
+			diakLista.Items.Clear();
+			osszpenz = 0;
+			osszBefizetett.Text = "0 Ft";
+		}
+
+		private void cClick(object sender, RoutedEventArgs e)
+		{
+			diakNev.Text = "";
+			befizetettMennyiseg.Text = "";
 		}
 	}
 }
