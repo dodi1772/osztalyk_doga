@@ -1,0 +1,35 @@
+﻿<Window x:Class="osztalyk_doga.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:osztalyk_doga"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="400">
+	<Grid Grid.Row="0" Grid.Column="0">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<StackPanel>
+			<WrapPanel Margin="0,10,0,0">
+				<TextBlock Text="Diák neve:" Margin="10,0,10,0"></TextBlock>
+				<TextBox x:Name="diakNev" Width="200" Margin="0,0,10,0"></TextBox>
+			</WrapPanel>
+			<WrapPanel Margin="0,10,0,0">
+				<TextBlock Text="Befizetett mennyiség:" Margin="10,0,10,0"></TextBlock>
+				<TextBox x:Name="befizetettMennyiseg" Width="100" Margin="0,0,10,0"></TextBox>
+				<Button Content="Hozzáadás" Click="hozzClick" Margin="10,0,10,0"></Button>
+			</WrapPanel>
+				<TextBlock Text="Diákok listája:" Margin="10,10,0,0"/>
+			<ListBox x:Name="diakLista" Height="200" Margin="10,10,10,10"></ListBox>
+			<WrapPanel>
+				<TextBlock Text="Összesen befizetett mennyiség:" Margin="10,0,0,0"/>
+				<TextBlock x:Name="osszBefizetett" Text="0 Ft" Margin="10,0,0,0"/>
+				<Button x:Name="ceButt" Content="CE" Click="ceClick" Margin="10,0,0,0" Padding="10,0,10,0"/>
+				<Button x:Name="cButt" Content="C" Click="cClick" Margin="15,0,0,0" Padding="10,0,10,0"/>
+			</WrapPanel>
+
+		</StackPanel>
+	</Grid>
+</Window>
